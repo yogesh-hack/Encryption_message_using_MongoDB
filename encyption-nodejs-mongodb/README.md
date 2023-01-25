@@ -35,7 +35,7 @@ const iv  = crypto.randomBytes(16);
 ## set template engine
 ```js
 app.set("view engine","ejs");
-``
+```
 
 ## start the server
 ```js
