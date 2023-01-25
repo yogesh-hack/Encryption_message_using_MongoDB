@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypted data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <h1 class="text-center px-5 py-5 text-xl font-bold">Encrypt and decrypt message using Mongo DB</h1>
+    <div class="flex justify-content">
+        <div class="px-5">
+            <form name="form1" method="POST" action="/">
+                <textarea id="encrypt" value="" name="text" class="border-solid border-2 border-sky-500"
+                    placeholder="Enter plain text.." rows="8" cols="80"></textarea>
+                <br>
+                <div class="flex justify-between">
+                    <!-- <button id="add" onclick="getInputValue();" class="px-2 py-2 bg-yellow-500 rounded-full"
+                        type="submit">Encrypt</button> -->
+                    <input type="submit" value="Encrypt" class="text-white cursor-pointer transition ease-in-out delay-150 bg-green-600 hover:-translate-y-1 hover:bg-yellow-500 duration-300 px-2 py-2 rounded-full">
+                </div>
+            </form>
+            <hr class="my-5">
+            <div class="w-80 px-5 py-5">
+                <h3 class="break-words overflow-auto font-bold" id="data">
+                    <% if(userValue!=null){ %>    
+                        <%= userValue %>
+                    <%}%> 
+                </h3>
+            </div>
+        </div>
+
+
+        <div class="px-5">
+            <form name="form1" method="POST" action="/d">
+                <textarea name="decrypt" class="border-solid border-2 border-sky-500" placeholder="Enter Encrypted text.." rows="8"
+                    cols="80"></textarea>
+                <br>
+                <input type="submit" value="Decrypt" class=" text-white cursor-pointer transition ease-in-out delay-150 bg-red-600 hover:-translate-y-1 hover:bg-yellow-500 duration-300 px-2 py-2 rounded-full">
+            </form>
+            <hr class="my-5">
+            <div class=" w-80 h-50 px-5 py-5 flex">
+                <h3 class="break-words">
+                    <% if(decryptdata != null){ %>    
+                        <%= decryptdata %>
+                    <%}%>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="fixed right-0 bottom-0">
+    <h2 class="bottom-0 left-0 px-5 py-5 font-bold">Made with ❤️ by <a class="flex text-yellow-500" href=""><span class="before:block before:absolute before:-inset-0 before:-skew-y-6 before:bg-pink-500 relative inline-block">
+        <span class="relative text-white">yogesh-cse</span>
+      </span><img class="w-8" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"></a></h2>
+
+      
+<!-- Modal toggle -->
+<button id="btn" data-modal-target="defaultModal" data-modal-toggle="defaultModal" class="block  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+Project Docs⬆️
+  </button>
+  
+  <!-- Main modal -->
+ 
+  <div id="defaultModal" tabindex="-1" aria-hidden="true" class=" h-full p-20 fixed z-50 hidden md:inset-0 h-modal md:h-full">
+      <div class="relative w-full h-full max-w-2xl md:h-auto">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <!-- Modal header -->
+              <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                      Docs⬆️
+                  </h3>
+                  <button id="button" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="defaultModal">
+                      <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+              </div>
+
+            <!-- Modal body -->
+                <div class="p-6 space-y-6 h-full overflow-auto">
+                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                            <!-- component -->
+                                <div class="w-full mx-auto">
+                                    <div class="w-full shadow-2xl subpixel-antialiased rounded h-64 bg-black border-black mx-auto">
+                                    <div class="flex items-center h-6 rounded-t bg-gray-100 border-b border-gray-500 text-center text-black" id="headerTerminal">
+                                        <div class="flex ml-2 items-center text-center border-red-900 bg-red-500 shadow-inner rounded-full w-3 h-3" id="closebtn">
+                                        </div>
+                                        <div class="ml-2 border-yellow-900 bg-yellow-500 shadow-inner rounded-full w-3 h-3" id="minbtn">
+                                        </div>
+                                        <div class="ml-2 border-green-900 bg-green-500 shadow-inner rounded-full w-3 h-3" id="maxbtn">
+                                        </div>
+                                        <div class="mx-auto pr-16" id="terminaltitle">
+                                        <p class="text-center text-sm">Server.js</p>
+                                        </div>
+                                
+                                    </div>
+                                    <div class="pl-1 pt-1 text-green-200 font-mono text-xs bg-black" id="console">
+                                        <p class="pb-1">
+                                            const express = require('express')  <br>
+                                            const app = express();  <br>
+                                            var parser = require('body-parser');  <br>
+                                            app.use(parser.urlencoded({ extended: false }))  <br>
+                                            app.use(parser.json())  <br>
+
+                                            // create HTTP server  <br>
+                            const http  =require('http').createServer(app);  <br>
+
+                            // !==========================include Mongo DB=============================  <br>
+
+                            const { MongoClient } = require('mongodb');  <br>
+                            const uri = "mongodb+srv://yogesh:9911208930@cluster0.yjdbx2j.mongodb.net/test"  <br>
+                            const client = new MongoClient(uri);  <br>
+                            <br>
+                                // !===========================set encryptted algorithms==================================== <br> 
+
+                            const crypto = require('crypto');  <br>
+                            const algorithm = 'aes-256-cbc' 
+                            <br>
+                            // set private key  => lenght must be 32 character  <br>
+                            const key = 'yogesh-computers-programming-tec' <br>
+ 
+                            // set random 16 digit initilization vector  <br>
+                            const iv  = crypto.randomBytes(16); 
+                            <br>
+                            //? ==================== set template engine ============================== <br>== 
+                            app.set("view engine","ejs");  <br>
+ 
+                            // start the server  <br>
+                            const port = process.env.PORT || 3000  <br>
+                            http.listen(port, () => {  <br>
+                                console.log(`server started running....,${port}`)  <br>
+
+                                //!========================== connect mongoDB server here============================= <br> 
+                                // route to show all encrypted messages <br>
+                                // app.get("/", async function (request,result) { <br>
+                                //     // Connect to the MongoDB cluster <br>
+                                //     await client.connect(); <br>
+                                //     result.render("index",{ <br>
+                                //         data : 'this is sample data' <br>
+                                //     }) <br>
+                                // }) <br>
+
+                                app.use(function(req,res,next){ <br>
+                                    res.locals.userValue = null; <br>
+                                    res.locals.decryptdata = null; <br>
+                                    next(); <br>
+                                })
+                                
+                                app.get('/',function(req,res){ <br>
+                                    // res.render('home',{ <br>
+                                    //     topicHead : 'Student Form', <br>
+                                    // }); <br>
+                                    res.render('index') <br>
+
+                                    // console.log('user accessing Home page'); <br>
+                                }); <br>
+                                // app.post('/',function(req,res){ <br>
+                                //     var message = { <br>
+                                //         data : req.body.text <br>
+                                //     }
+                                //      console.log(message) <br>
+                                    // res.render('home',{ <br>
+                                    //     userValue : student,
+                                    //     topicHead : 'Student Form'
+                                    // });
+                                    // res.render('index',{
+                                    //     userValue : message
+                                    // });
+                                    //res.json(student);
+                                    <br>
+                                // });
+                                app.post('/',async function (req,result){ <br>
+                                    const message = { <br>
+                                        data : req.body.text <br>
+                                    } <br>
+                                    // console.log(message) <br>
+                                    // Connect to the MongoDB cluster <br>
+                                    await client.connect(); <br>
+                                    // Make the appropriate DB calls <br>
+                                    // console.log("connect with Databases:"); <br>
+                                    const cipher = crypto.createCipheriv(algorithm,key,iv); <br>
+                                    let  encryptiondata = cipher.update(message.data,'utf-8','hex'); <br>
+                                    encryptiondata += cipher.final('hex'); <br>
+                                    // convert initilization vector into base64 string <br>
+                                    const base64data = Buffer.from(iv,'binary').toString('base64'); <br>
+                                    // save encryption string aliong with initilizatin vector in database <br>
+                                    const data = client.db('login_data').collection('string'); <br>
+                                    await data.insertOne({ <br>
+                                        iv: base64data, <br>
+                                        encrypteddata: encryptiondata <br>
+                                    }); <br>
+                                    // const cursor = data.find(); <br>
+                                    // replace console.dir with your callback to access individual elements <br>
+                                    // await cursor.forEach(console.log) <br>
+                                    result.render("index",{ <br>
+                                        userValue : encryptiondata, <br>
+                                    }) <br>
+                                }) <br>
+
+
+                                app.post('/d', async function(req,result) { <br>
+                                    const encrypted = { <br>
+                                        data : req.body.decrypt <br>
+                                    } <br>
+                                    // console.log(encrypted) <br>
+                                    await client.connect(); <br>
+                                    // console.log("Decryptd data is runnning....") <br>
+
+                                    const obj = client.db('login_data').collection('string') <br>
+                                    const out = await obj.findOne({encrypteddata : encrypted.data}) <br>
+                                    // console.log(out) <br>
+                                    // console.log(out._id) <br>
+                                    if(obj == null){ <br>
+                                        result.status(401).send("Not found") <br>
+                                        return <br>
+                                    } <br>
+                                    const original = Buffer.from(out.iv, 'base64') <br>
+                                    const decipher = crypto.createDecipheriv(algorithm, key, original); <br>
+                                    let decryptdata = decipher.update(out.encrypteddata, 'hex','utf-8'); <br>
+                                    decryptdata += decipher.final('utf-8') <br>
+                                    result.render("index",{  <br>
+                                        decryptdata : decryptdata <br>
+                                }) <br>
+                                }) <br>
+
+                            })
+                                        </p>
+                                    </div>
+                                    </div> 
+                                </div>
+
+                            
+                    </p>
+                </div>
+              <!-- Modal footer -->
+              <div id="button" class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                  <button data-modal-hide="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Happy Coding ❤️</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+    </div>
+
+    <script>
+        let modal = document.getElementById("defaultModal");
+        let btn = document.getElementById("btn");
+        let button = document.getElementById("button");
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        // We want the modal to close when the OK button is clicked
+        button.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    </script>
+    </body>
+
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "encyption-nodejs-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yogesh-hack/Encryption_message_using_MongoDB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yogesh-hack/Encryption_message_using_MongoDB/issues"
+  },
+  "homepage": "https://github.com/yogesh-hack/Encryption_message_using_MongoDB#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "mongodb": "^4.13.0",
+    "mongoose": "^6.8.2"
+  }
+}
