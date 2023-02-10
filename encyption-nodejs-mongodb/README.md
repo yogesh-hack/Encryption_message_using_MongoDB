@@ -17,7 +17,7 @@ const http  =require('http').createServer(app);
 ## Include Mongo Db
 ```js
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://yogesh:9911208930@cluster0.yjdbx2j.mongodb.net/test"
+const uri = "mongo_URL"
 const client = new MongoClient(uri);
 ```
 
